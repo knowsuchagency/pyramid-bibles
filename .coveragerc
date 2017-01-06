@@ -1,0 +1,3 @@
+[run]
+source = pyramid_bibles
+omit = pyramid_bibles/test*
