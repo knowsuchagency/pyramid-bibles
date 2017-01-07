@@ -27,8 +27,11 @@ class Resource:
         raise KeyError
 
     def __repr__(self):
+        # we only want to return the full object at the book level or lower
+        # else simply return the next keys or child nodes in the tree
         if self.__parent__ is None or self.__name__ in ('NIV', 'MSG', 'ESV', 'NLT'):
             return json.dumps(tuple(self.data.keys()))
+        # return json string
         return json.dumps(self.data)
 
 
@@ -47,8 +50,6 @@ def bible(context, request):
     """Return the bible tree"""
     return context
 
-# @view_config(route_name='bible', context=str, renderer='string')
-# def bible_verse(context, request):
-#     return context
+
 
 
