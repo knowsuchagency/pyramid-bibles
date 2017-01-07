@@ -8,7 +8,6 @@ def main(global_config, **settings):
     config.include('pyramid_chameleon')
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
-    config.add_route('niv', '/niv')
-    config.add_route('resource', '/resource')
+    config.add_route('bible', 'bible*traverse', factory='pyramid_bibles.views.get_root')
     config.scan()
     return config.make_wsgi_app()

@@ -1,0 +1,3 @@
+[submodule "pyramid_bibles/static/bibles"]
+	path = pyramid_bibles/static/bibles
+	url = git@github.com:honza/bibles.git
